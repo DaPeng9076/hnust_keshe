@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.700 ns
+From           : reset
+To             : goods:g6|price0[1]
+From Clock     : --
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 34.500 ns
+From           : goods:g3|jishi
+To             : showjs
+From Clock     : clkk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.700 ns
+From           : reset
+To             : goods:g4|buying
+From Clock     : --
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 66.67 MHz ( period = 15.000 ns )
+From           : clkdiv:u2|shiwei1[3]
+To             : clkdiv:u2|shiwei1[0]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clkk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 66.67 MHz ( period = 15.000 ns )
+From           : goods:g6|init
+To             : goods:g6|price0[1]
+From Clock     : clkk
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pay'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 95.24 MHz ( period = 10.500 ns )
+From           : clkdiv:u2|chuhuo0
+To             : clkdiv:u2|chuhuo0
+From Clock     : pay
+To Clock       : pay
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : clkdiv:u2|clkdiv
+To             : clkdiv:u2|chuhuo0
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 1
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 1
+
+--------------------------------------------------------------------------------------
+

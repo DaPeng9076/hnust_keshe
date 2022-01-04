@@ -1,0 +1,729 @@
+Version 9.0 Build 132 02/25/2009 SJ Full Version
+18
+1131
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+huowushu
+# storage
+db|zidongshouhuoji.(1).cnf
+db|zidongshouhuoji.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+huowushu.vhd
+d9cedb2c8717d894202dfae4237465de
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(hw1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hw2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hw3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hw4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hw5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hw6)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+huowushu:u1
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi1
+# storage
+db|zidongshouhuoji.(2).cnf
+db|zidongshouhuoji.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi1.vhd
+d1cc8275869b4837e3248bc0af9baa
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(login1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j11)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price1)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi1:u2
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi2
+# storage
+db|zidongshouhuoji.(3).cnf
+db|zidongshouhuoji.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi2.vhd
+7e86336b6b47ae4f8b9afd3aeafada
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(j2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j22)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(login2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price2)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi2:u3
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi3
+# storage
+db|zidongshouhuoji.(4).cnf
+db|zidongshouhuoji.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi3.vhd
+efd52f964cb6d5b177bcb4c8cecfa3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(login3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j33)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price3)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi3:u4
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi4
+# storage
+db|zidongshouhuoji.(5).cnf
+db|zidongshouhuoji.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi4.vhd
+833575e4b7b5237679232c6a26a2632
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(login4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j44)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price4)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi4:u5
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi5
+# storage
+db|zidongshouhuoji.(6).cnf
+db|zidongshouhuoji.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi5.vhd
+a19d5373e9b041ba3cd9c4aaf15748b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(login5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j55)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price5)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi5:u6
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+kongzhi6
+# storage
+db|zidongshouhuoji.(7).cnf
+db|zidongshouhuoji.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kongzhi6.vhd
+887ac0926e030a95e9f26d2a8d08022
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(login6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(j66)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(price6)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+kongzhi6:u7
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+shumashuzi
+# storage
+db|zidongshouhuoji.(8).cnf
+db|zidongshouhuoji.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shumashuzi.vhd
+9c5484957c75a02774a8260acc136d9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(sel)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain0)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dain7)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(daout)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+shumashuzi:u8
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+shumaxianshi
+# storage
+db|zidongshouhuoji.(9).cnf
+db|zidongshouhuoji.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shumaxianshi.vhd
+7d612865d99c33bdcf3e2da5241459c
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(num)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(smg)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+shumaxianshi:u9
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+xuanzeshuma
+# storage
+db|zidongshouhuoji.(10).cnf
+db|zidongshouhuoji.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+xuanzeshuma.vhd
+97f7845f148be25ec16da48b4cc9d34
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(sel)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(teq)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+xuanzeshuma:u10
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+jishu60
+# storage
+db|zidongshouhuoji.(11).cnf
+db|zidongshouhuoji.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+60jishu.vhd
+f1642508b108f47878b2a22c54771a9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(shiwei1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(shiwei2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(shiwei3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(shiwei4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(shiwei5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(shiwei6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei3)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei5)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(gewei6)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num7)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num8)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+jishu60:u11
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+fenshiqi
+# storage
+db|zidongshouhuoji.(12).cnf
+db|zidongshouhuoji.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+fenshiqi.vhd
+b2782c236b73e281c609712694dd53
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+fenshiqi:u12
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+zidongshouhuoji
+# storage
+db|zidongshouhuoji.(0).cnf
+db|zidongshouhuoji.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+zidongshouhuoji.vhd
+c1dcc13a1781b570957c30d3a2ce19ca
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,27 @@
+WED
+
+	Undo Commands
+	     1.	Cut Node(s) or Waveform Divider(s)
+			 ***  *** 
+	     2.	Drop Node
+			 *** 
+	     3.	Count Value
+			 *** 
+	     4.	Drop Node
+			 *** 
+	     5.	Drop Node
+			 *** 
+	     6.	Count Value
+			 *** 
+	     7.	Drop Node
+			 *** 
+	     8.	Move Time Bar
+			 ***  *** 
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+

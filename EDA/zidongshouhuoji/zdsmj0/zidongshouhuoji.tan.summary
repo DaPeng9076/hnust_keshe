@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.400 ns
+From           : buy1
+To             : kongzhi1:u2|j1111[2]
+From Clock     : --
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 20.200 ns
+From           : shumashuzi:u8|daout[3]
+To             : smg[6]
+From Clock     : clk7
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.700 ns
+From           : choose3
+To             : kongzhi3:u4|jianyi
+From Clock     : --
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clkk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 41.15 MHz ( period = 24.300 ns )
+From           : kongzhi4:u5|j4444[3]
+To             : kongzhi4:u5|j444[1]
+From Clock     : clkk
+To Clock       : clkk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk7'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 84.03 MHz ( period = 11.900 ns )
+From           : shumashuzi:u8|sel[0]
+To             : shumashuzi:u8|daout[3]
+From Clock     : clk7
+To Clock       : clk7
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

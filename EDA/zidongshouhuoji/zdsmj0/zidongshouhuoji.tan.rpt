@@ -1,0 +1,954 @@
+Classic Timing Analyzer report for zidongshouhuoji
+Fri Dec 24 17:43:24 2021
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clkk'
+  7. Clock Setup: 'clk7'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                   ; To                     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 10.400 ns                        ; buy1                   ; kongzhi1:u2|j1111[2]   ; --         ; clkk     ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 20.200 ns                        ; shumashuzi:u8|daout[3] ; smg[6]                 ; clk7       ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 2.700 ns                         ; choose3                ; kongzhi3:u4|jianyi     ; --         ; clkk     ; 0            ;
+; Clock Setup: 'clkk'          ; N/A   ; None          ; 41.15 MHz ( period = 24.300 ns ) ; kongzhi4:u5|j4444[3]   ; kongzhi4:u5|j444[1]    ; clkk       ; clkk     ; 0            ;
+; Clock Setup: 'clk7'          ; N/A   ; None          ; 84.03 MHz ( period = 11.900 ns ) ; shumashuzi:u8|sel[0]   ; shumashuzi:u8|daout[3] ; clk7       ; clk7     ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                        ;                        ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K20TC144-3    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clkk            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; clk7            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clkk'                                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                 ; To                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 41.15 MHz ( period = 24.300 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 22.100 ns               ;
+; N/A                                     ; 41.32 MHz ( period = 24.200 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 22.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 21.800 ns               ;
+; N/A                                     ; 42.02 MHz ( period = 23.800 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j2222[1]  ; clkk       ; clkk     ; None                        ; None                      ; 21.700 ns               ;
+; N/A                                     ; 42.02 MHz ( period = 23.800 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j2222[2]  ; clkk       ; clkk     ; None                        ; None                      ; 21.700 ns               ;
+; N/A                                     ; 42.37 MHz ( period = 23.600 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|quehuo2   ; clkk       ; clkk     ; None                        ; None                      ; 22.400 ns               ;
+; N/A                                     ; 42.37 MHz ( period = 23.600 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|price2[2] ; clkk       ; clkk     ; None                        ; None                      ; 22.400 ns               ;
+; N/A                                     ; 42.74 MHz ( period = 23.400 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|quehuo5   ; clkk       ; clkk     ; None                        ; None                      ; 21.400 ns               ;
+; N/A                                     ; 42.74 MHz ( period = 23.400 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|quehuo5   ; clkk       ; clkk     ; None                        ; None                      ; 21.400 ns               ;
+; N/A                                     ; 42.74 MHz ( period = 23.400 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|quehuo5   ; clkk       ; clkk     ; None                        ; None                      ; 21.400 ns               ;
+; N/A                                     ; 42.74 MHz ( period = 23.400 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j4444[0]  ; clkk       ; clkk     ; None                        ; None                      ; 21.300 ns               ;
+; N/A                                     ; 42.92 MHz ( period = 23.300 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j2222[0]  ; clkk       ; clkk     ; None                        ; None                      ; 21.200 ns               ;
+; N/A                                     ; 43.29 MHz ( period = 23.100 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|chuhuo2   ; clkk       ; clkk     ; None                        ; None                      ; 21.900 ns               ;
+; N/A                                     ; 43.29 MHz ( period = 23.100 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.800 ns               ;
+; N/A                                     ; 43.29 MHz ( period = 23.100 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.800 ns               ;
+; N/A                                     ; 43.29 MHz ( period = 23.100 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.800 ns               ;
+; N/A                                     ; 43.29 MHz ( period = 23.100 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.800 ns               ;
+; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j1111[0]  ; clkk       ; clkk     ; None                        ; None                      ; 21.000 ns               ;
+; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 43.67 MHz ( period = 22.900 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|quehuo5   ; clkk       ; clkk     ; None                        ; None                      ; 20.900 ns               ;
+; N/A                                     ; 43.86 MHz ( period = 22.800 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j4444[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 43.86 MHz ( period = 22.800 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j444[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 43.86 MHz ( period = 22.800 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j444[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j2222[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j222[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j222[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j2222[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j2222[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j2222[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j2222[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j4444[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 44.05 MHz ( period = 22.700 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j4444[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.600 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j333[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j333[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j333[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j5555[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j5555[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j5555[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j555[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j555[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j555[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j555[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j555[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j555[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j555[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j555[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.25 MHz ( period = 22.600 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j555[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|quehuo2   ; clkk       ; clkk     ; None                        ; None                      ; 21.200 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|quehuo2   ; clkk       ; clkk     ; None                        ; None                      ; 21.200 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|quehuo4   ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|price2[2] ; clkk       ; clkk     ; None                        ; None                      ; 21.200 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|price2[2] ; clkk       ; clkk     ; None                        ; None                      ; 21.200 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|price4[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.500 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j1111[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j111[0]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j111[3]   ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.44 MHz ( period = 22.500 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.100 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j5555[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j5555[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j5555[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j5555[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j5555[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.64 MHz ( period = 22.400 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j5555[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 44.84 MHz ( period = 22.300 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j1111[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.84 MHz ( period = 22.300 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j1111[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.300 ns               ;
+; N/A                                     ; 44.84 MHz ( period = 22.300 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|j444[2]   ; clkk       ; clkk     ; None                        ; None                      ; 20.100 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|price5[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|price5[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|price5[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j2222[0]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j2222[0]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j2222[1]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j2222[2]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi2:u3|j2222[3] ; kongzhi2:u3|j222[2]   ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j3333[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j3333[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j3333[3]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j4444[0]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.05 MHz ( period = 22.200 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j4444[0]  ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi3:u4|j3333[0] ; kongzhi3:u4|j333[1]   ; clkk       ; clkk     ; None                        ; None                      ; 19.800 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j5555[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j5555[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j5555[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j5555[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j555[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j555[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|j555[2]   ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|j555[2]   ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|j555[2]   ; clkk       ; clkk     ; None                        ; None                      ; 19.900 ns               ;
+; N/A                                     ; 45.25 MHz ( period = 22.100 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j555[1]   ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|chuhuo2   ; clkk       ; clkk     ; None                        ; None                      ; 20.700 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|chuhuo2   ; clkk       ; clkk     ; None                        ; None                      ; 20.700 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi4:u5|j4444[3] ; kongzhi4:u5|chuhuo4   ; clkk       ; clkk     ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|quehuo2   ; clkk       ; clkk     ; None                        ; None                      ; 20.700 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|price2[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.700 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j1111[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.800 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j1111[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.800 ns               ;
+; N/A                                     ; 45.45 MHz ( period = 22.000 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|j111[2]   ; clkk       ; clkk     ; None                        ; None                      ; 19.800 ns               ;
+; N/A                                     ; 45.66 MHz ( period = 21.900 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j5555[1]  ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 45.66 MHz ( period = 21.900 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j5555[2]  ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 45.87 MHz ( period = 21.800 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|quehuo1   ; clkk       ; clkk     ; None                        ; None                      ; 20.900 ns               ;
+; N/A                                     ; 45.87 MHz ( period = 21.800 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|price1[2] ; clkk       ; clkk     ; None                        ; None                      ; 20.900 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi5:u6|j5555[3] ; kongzhi5:u6|chuhuo5   ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi5:u6|j5555[1] ; kongzhi5:u6|chuhuo5   ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi5:u6|j5555[2] ; kongzhi5:u6|chuhuo5   ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|price5[2] ; clkk       ; clkk     ; None                        ; None                      ; 19.700 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j2222[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j3333[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j3333[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j3333[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi3:u4|j3333[0] ; kongzhi3:u4|j3333[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.08 MHz ( period = 21.700 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j4444[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.500 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j2222[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j2222[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j222[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j222[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j222[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j222[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j4444[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j4444[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j444[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j444[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j444[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j444[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j5555[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.400 ns               ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|j555[2]   ; clkk       ; clkk     ; None                        ; None                      ; 19.400 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|chuhuo2   ; clkk       ; clkk     ; None                        ; None                      ; 20.200 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j1111[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j1111[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j1111[3]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j111[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j111[0]   ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j111[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j111[3]   ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j4444[1]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j4444[1]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j4444[2]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j4444[2]  ; clkk       ; clkk     ; None                        ; None                      ; 19.300 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi1:u2|j1111[3] ; kongzhi1:u2|chuhuo1   ; clkk       ; clkk     ; None                        ; None                      ; 20.400 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|quehuo4   ; clkk       ; clkk     ; None                        ; None                      ; 19.200 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|quehuo4   ; clkk       ; clkk     ; None                        ; None                      ; 19.200 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|price4[2] ; clkk       ; clkk     ; None                        ; None                      ; 19.200 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|price4[2] ; clkk       ; clkk     ; None                        ; None                      ; 19.200 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j1111[1]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j1111[1]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j1111[2]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j1111[2]  ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 46.95 MHz ( period = 21.300 ns )                    ; kongzhi2:u3|j222[3]  ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 19.100 ns               ;
+; N/A                                     ; 47.17 MHz ( period = 21.200 ns )                    ; kongzhi5:u6|j5555[0] ; kongzhi5:u6|chuhuo5   ; clkk       ; clkk     ; None                        ; None                      ; 19.200 ns               ;
+; N/A                                     ; 47.17 MHz ( period = 21.200 ns )                    ; kongzhi3:u4|j3333[0] ; kongzhi3:u4|j3333[0]  ; clkk       ; clkk     ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|quehuo3   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|quehuo3   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|quehuo3   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|price3[2] ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|price3[2] ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|price3[2] ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j2222[3]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j222[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi2:u3|j2222[0] ; kongzhi2:u3|j222[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi2:u3|j2222[1] ; kongzhi2:u3|j222[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi2:u3|j2222[2] ; kongzhi2:u3|j222[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j333[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j333[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j333[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j333[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j333[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j333[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j4444[3]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j444[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j444[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j4444[1] ; kongzhi4:u5|j444[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j4444[2] ; kongzhi4:u5|j444[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.39 MHz ( period = 21.100 ns )                    ; kongzhi4:u5|j444[0]  ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.900 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j1111[3]  ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j111[0]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j111[3]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi1:u2|j1111[1] ; kongzhi1:u2|j111[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi1:u2|j1111[2] ; kongzhi1:u2|j111[2]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j4444[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|j4444[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.62 MHz ( period = 21.000 ns )                    ; kongzhi4:u5|j444[3]  ; kongzhi4:u5|j444[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi2:u3|j222[3]  ; kongzhi2:u3|j2222[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi2:u3|j222[3]  ; kongzhi2:u3|j2222[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.800 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j3333[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j3333[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j3333[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[3] ; kongzhi3:u4|j3333[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[1] ; kongzhi3:u4|j3333[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 47.85 MHz ( period = 20.900 ns )                    ; kongzhi3:u4|j3333[2] ; kongzhi3:u4|j3333[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi4:u5|j4444[0] ; kongzhi4:u5|price4[2] ; clkk       ; clkk     ; None                        ; None                      ; 18.700 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j1111[1]  ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi1:u2|j1111[0] ; kongzhi1:u2|j1111[2]  ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi1:u2|j111[0]  ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi1:u2|j111[3]  ; kongzhi1:u2|j111[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi2:u3|j222[0]  ; kongzhi2:u3|j222[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi6:u7|j6666[3] ; kongzhi6:u7|j666[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; N/A                                     ; 48.08 MHz ( period = 20.800 ns )                    ; kongzhi6:u7|j6666[1] ; kongzhi6:u7|j666[1]   ; clkk       ; clkk     ; None                        ; None                      ; 18.600 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                      ;                       ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk7'                                                                                                                                                                                                 ;
++-------+------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                  ; To                     ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; shumashuzi:u8|temp[1] ; shumashuzi:u8|daout[2] ; clk7       ; clk7     ; None                        ; None                      ; 9.700 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|daout[3] ; clk7       ; clk7     ; None                        ; None                      ; 9.700 ns                ;
+; N/A   ; 84.75 MHz ( period = 11.800 ns )               ; shumashuzi:u8|temp[1] ; shumashuzi:u8|daout[0] ; clk7       ; clk7     ; None                        ; None                      ; 9.600 ns                ;
+; N/A   ; 86.96 MHz ( period = 11.500 ns )               ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|daout[2] ; clk7       ; clk7     ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 92.59 MHz ( period = 10.800 ns )               ; shumashuzi:u8|temp[1] ; shumashuzi:u8|daout[1] ; clk7       ; clk7     ; None                        ; None                      ; 8.500 ns                ;
+; N/A   ; 96.15 MHz ( period = 10.400 ns )               ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|daout[1] ; clk7       ; clk7     ; None                        ; None                      ; 8.100 ns                ;
+; N/A   ; 98.04 MHz ( period = 10.200 ns )               ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|daout[0] ; clk7       ; clk7     ; None                        ; None                      ; 8.000 ns                ;
+; N/A   ; 101.01 MHz ( period = 9.900 ns )               ; shumashuzi:u8|temp[1] ; shumashuzi:u8|daout[3] ; clk7       ; clk7     ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|daout[1] ; clk7       ; clk7     ; None                        ; None                      ; 3.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|temp[2]  ; clk7       ; clk7     ; None                        ; None                      ; 3.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|daout[2] ; clk7       ; clk7     ; None                        ; None                      ; 3.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[1] ; shumashuzi:u8|temp[2]  ; clk7       ; clk7     ; None                        ; None                      ; 3.400 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|daout[3] ; clk7       ; clk7     ; None                        ; None                      ; 3.400 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|temp[1]  ; clk7       ; clk7     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[1] ; shumashuzi:u8|sel[1]   ; clk7       ; clk7     ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|daout[0] ; clk7       ; clk7     ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[1] ; shumashuzi:u8|temp[1]  ; clk7       ; clk7     ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|temp[2]  ; clk7       ; clk7     ; None                        ; None                      ; 1.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|sel[0]  ; shumashuzi:u8|sel[0]   ; clk7       ; clk7     ; None                        ; None                      ; 1.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; shumashuzi:u8|temp[2] ; shumashuzi:u8|sel[2]   ; clk7       ; clk7     ; None                        ; None                      ; 1.500 ns                ;
++-------+------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+-----------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From    ; To                    ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+-----------------------+----------+
+; N/A                                     ; None                                                ; 10.400 ns  ; buy1    ; kongzhi1:u2|j1111[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 10.400 ns  ; buy1    ; kongzhi1:u2|j1111[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 9.400 ns   ; buy6    ; kongzhi6:u7|j6666[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 9.400 ns   ; buy6    ; kongzhi6:u7|j6666[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 9.300 ns   ; buy2    ; kongzhi2:u3|j2222[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 9.300 ns   ; buy2    ; kongzhi2:u3|j2222[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.700 ns   ; buy3    ; kongzhi3:u4|j3333[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.700 ns   ; buy3    ; kongzhi3:u4|j3333[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.500 ns   ; buy5    ; kongzhi5:u6|j5555[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.500 ns   ; buy5    ; kongzhi5:u6|j5555[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.400 ns   ; buy1    ; kongzhi1:u2|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 8.400 ns   ; buy1    ; kongzhi1:u2|j111[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 8.400 ns   ; buy1    ; kongzhi1:u2|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.900 ns   ; buy1    ; kongzhi1:u2|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.800 ns   ; buy4    ; kongzhi4:u5|j4444[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.800 ns   ; buy4    ; kongzhi4:u5|j4444[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.400 ns   ; buy1    ; kongzhi1:u2|j1111[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.400 ns   ; choose2 ; kongzhi2:u3|j2222[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.400 ns   ; choose2 ; kongzhi2:u3|j222[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 7.300 ns   ; buy2    ; kongzhi2:u3|j222[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 7.300 ns   ; choose6 ; kongzhi6:u7|j666[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 7.300 ns   ; choose2 ; kongzhi2:u3|j2222[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.300 ns   ; choose2 ; kongzhi2:u3|j2222[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.200 ns   ; buy6    ; kongzhi6:u7|j666[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 7.000 ns   ; choose6 ; kongzhi6:u7|j6666[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.000 ns   ; choose6 ; kongzhi6:u7|j6666[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.000 ns   ; choose6 ; kongzhi6:u7|j6666[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 7.000 ns   ; choose6 ; kongzhi6:u7|j666[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 7.000 ns   ; choose1 ; kongzhi1:u2|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; buy6    ; kongzhi6:u7|j6666[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; buy4    ; kongzhi4:u5|j444[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; buy1    ; kongzhi1:u2|j1111[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; buy1    ; kongzhi1:u2|j111[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; buy1    ; kongzhi1:u2|j111[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; choose3 ; kongzhi3:u4|j333[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; choose3 ; kongzhi3:u4|j333[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; choose2 ; kongzhi2:u3|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; choose2 ; kongzhi2:u3|j222[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.900 ns   ; choose2 ; kongzhi2:u3|j222[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.800 ns   ; choose3 ; kongzhi3:u4|j3333[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.800 ns   ; choose3 ; kongzhi3:u4|j3333[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.800 ns   ; choose3 ; kongzhi3:u4|j3333[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.700 ns   ; buy5    ; kongzhi5:u6|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.700 ns   ; choose2 ; kongzhi2:u3|j222[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.600 ns   ; choose1 ; kongzhi1:u2|j111[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.500 ns   ; buy3    ; kongzhi3:u4|j333[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.500 ns   ; choose6 ; kongzhi6:u7|j6666[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.500 ns   ; choose6 ; kongzhi6:u7|j666[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.500 ns   ; choose6 ; kongzhi6:u7|j666[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.500 ns   ; choose5 ; kongzhi5:u6|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; buy6    ; kongzhi6:u7|j6666[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; buy2    ; kongzhi2:u3|j2222[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; buy1    ; kongzhi1:u2|j111[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; buy1    ; kongzhi1:u2|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; buy1    ; kongzhi1:u2|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; choose3 ; kongzhi3:u4|j333[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.400 ns   ; choose3 ; kongzhi3:u4|j333[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.300 ns   ; choose3 ; kongzhi3:u4|chuhuo3   ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy6    ; kongzhi6:u7|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy5    ; kongzhi5:u6|j5555[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy5    ; kongzhi5:u6|j555[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy5    ; kongzhi5:u6|j555[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy5    ; kongzhi5:u6|j555[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy2    ; kongzhi2:u3|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; buy1    ; kongzhi1:u2|chuhuo1   ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; choose4 ; kongzhi4:u5|j4444[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.200 ns   ; choose4 ; kongzhi4:u5|j444[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 6.100 ns   ; buy6    ; kongzhi6:u7|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.100 ns   ; buy3    ; kongzhi3:u4|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.100 ns   ; buy3    ; kongzhi3:u4|j3333[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.100 ns   ; choose4 ; kongzhi4:u5|j4444[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.100 ns   ; choose4 ; kongzhi4:u5|j4444[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.000 ns   ; buy4    ; kongzhi4:u5|j4444[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 6.000 ns   ; choose3 ; kongzhi3:u4|j3333[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.900 ns   ; buy5    ; kongzhi5:u6|quehuo5   ; clkk     ;
+; N/A                                     ; None                                                ; 5.900 ns   ; buy4    ; kongzhi4:u5|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.900 ns   ; buy1    ; kongzhi1:u2|quehuo1   ; clkk     ;
+; N/A                                     ; None                                                ; 5.900 ns   ; buy1    ; kongzhi1:u2|price1[2] ; clkk     ;
+; N/A                                     ; None                                                ; 5.800 ns   ; buy2    ; kongzhi2:u3|j2222[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.800 ns   ; buy2    ; kongzhi2:u3|j222[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.800 ns   ; buy2    ; kongzhi2:u3|j222[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.800 ns   ; choose2 ; kongzhi2:u3|j2222[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; buy6    ; kongzhi6:u7|j666[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; buy6    ; kongzhi6:u7|j666[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; buy5    ; kongzhi5:u6|j5555[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; buy5    ; kongzhi5:u6|j555[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; choose4 ; kongzhi4:u5|j444[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.700 ns   ; choose4 ; kongzhi4:u5|j444[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.600 ns   ; buy5    ; kongzhi5:u6|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.600 ns   ; buy3    ; kongzhi3:u4|j3333[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.600 ns   ; choose1 ; kongzhi1:u2|j1111[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.600 ns   ; choose1 ; kongzhi1:u2|j1111[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.600 ns   ; choose1 ; kongzhi1:u2|j1111[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; buy4    ; kongzhi4:u5|chuhuo4   ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; buy3    ; kongzhi3:u4|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose6 ; kongzhi6:u7|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose5 ; kongzhi5:u6|j5555[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose5 ; kongzhi5:u6|j555[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose5 ; kongzhi5:u6|j555[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose5 ; kongzhi5:u6|j555[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.500 ns   ; choose4 ; kongzhi4:u5|j444[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; buy4    ; kongzhi4:u5|j4444[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; buy4    ; kongzhi4:u5|j444[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; buy4    ; kongzhi4:u5|j444[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; buy2    ; kongzhi2:u3|chuhuo2   ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; buy2    ; kongzhi2:u3|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.400 ns   ; choose3 ; kongzhi3:u4|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.300 ns   ; buy6    ; kongzhi6:u7|chuhuo6   ; clkk     ;
+; N/A                                     ; None                                                ; 5.300 ns   ; buy3    ; kongzhi3:u4|chuhuo3   ; clkk     ;
+; N/A                                     ; None                                                ; 5.300 ns   ; buy2    ; kongzhi2:u3|j222[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.300 ns   ; choose5 ; kongzhi5:u6|j5555[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.300 ns   ; choose5 ; kongzhi5:u6|j5555[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.200 ns   ; buy6    ; kongzhi6:u7|j666[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.200 ns   ; buy4    ; kongzhi4:u5|quehuo4   ; clkk     ;
+; N/A                                     ; None                                                ; 5.200 ns   ; buy4    ; kongzhi4:u5|price4[2] ; clkk     ;
+; N/A                                     ; None                                                ; 5.200 ns   ; buy4    ; kongzhi4:u5|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 5.200 ns   ; choose5 ; kongzhi5:u6|j555[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; buy2    ; kongzhi2:u3|quehuo2   ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; buy2    ; kongzhi2:u3|price2[2] ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; buy2    ; kongzhi2:u3|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; choose4 ; kongzhi4:u5|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; choose1 ; kongzhi1:u2|j1111[3]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; choose1 ; kongzhi1:u2|j111[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.100 ns   ; choose1 ; kongzhi1:u2|j111[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy6    ; kongzhi6:u7|quehuo6   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy6    ; kongzhi6:u7|price6[2] ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy6    ; kongzhi6:u7|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy5    ; kongzhi5:u6|chuhuo5   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy3    ; kongzhi3:u4|quehuo3   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy3    ; kongzhi3:u4|price3[2] ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy3    ; kongzhi3:u4|j333[0]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy3    ; kongzhi3:u4|j333[3]   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; buy3    ; kongzhi3:u4|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; choose6 ; kongzhi6:u7|chuhuo6   ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; choose5 ; kongzhi5:u6|j5555[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 5.000 ns   ; choose1 ; kongzhi1:u2|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.900 ns   ; buy4    ; kongzhi4:u5|j444[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 4.800 ns   ; buy5    ; kongzhi5:u6|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.800 ns   ; buy5    ; kongzhi5:u6|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.800 ns   ; choose5 ; kongzhi5:u6|chuhuo5   ; clkk     ;
+; N/A                                     ; None                                                ; 4.700 ns   ; buy5    ; kongzhi5:u6|price5[2] ; clkk     ;
+; N/A                                     ; None                                                ; 4.700 ns   ; buy5    ; kongzhi5:u6|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 4.600 ns   ; buy6    ; kongzhi6:u7|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.600 ns   ; buy6    ; kongzhi6:u7|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.600 ns   ; choose4 ; kongzhi4:u5|chuhuo4   ; clkk     ;
+; N/A                                     ; None                                                ; 4.600 ns   ; choose4 ; kongzhi4:u5|j4444[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.600 ns   ; choose1 ; kongzhi1:u2|j111[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 4.500 ns   ; buy3    ; kongzhi3:u4|j333[2]   ; clkk     ;
+; N/A                                     ; None                                                ; 4.400 ns   ; choose2 ; kongzhi2:u3|chuhuo2   ; clkk     ;
+; N/A                                     ; None                                                ; 4.200 ns   ; choose2 ; kongzhi2:u3|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.000 ns   ; choose5 ; kongzhi5:u6|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 4.000 ns   ; choose1 ; kongzhi1:u2|chuhuo1   ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy4    ; kongzhi4:u5|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy4    ; kongzhi4:u5|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy4    ; kongzhi4:u5|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy2    ; kongzhi2:u3|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy2    ; kongzhi2:u3|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.900 ns   ; buy1    ; kongzhi1:u2|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 3.700 ns   ; buy3    ; kongzhi3:u4|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.700 ns   ; buy3    ; kongzhi3:u4|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.500 ns   ; choose6 ; kongzhi6:u7|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 3.000 ns   ; choose3 ; kongzhi3:u4|quehuo3   ; clkk     ;
+; N/A                                     ; None                                                ; 3.000 ns   ; choose3 ; kongzhi3:u4|price3[2] ; clkk     ;
+; N/A                                     ; None                                                ; 3.000 ns   ; choose3 ; kongzhi3:u4|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 2.600 ns   ; choose4 ; kongzhi4:u5|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.500 ns   ; choose3 ; kongzhi3:u4|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.500 ns   ; choose1 ; kongzhi1:u2|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.500 ns   ; choose1 ; kongzhi1:u2|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.400 ns   ; choose2 ; kongzhi2:u3|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.300 ns   ; buy5    ; kongzhi5:u6|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 2.200 ns   ; choose2 ; kongzhi2:u3|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.100 ns   ; buy6    ; kongzhi6:u7|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns   ; choose5 ; kongzhi5:u6|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns   ; choose5 ; kongzhi5:u6|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns   ; choose1 ; kongzhi1:u2|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns   ; choose6 ; kongzhi6:u7|quehuo6   ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns   ; choose6 ; kongzhi6:u7|price6[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns   ; choose6 ; kongzhi6:u7|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns   ; choose2 ; kongzhi2:u3|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns   ; choose6 ; kongzhi6:u7|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns   ; choose5 ; kongzhi5:u6|quehuo5   ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns   ; choose5 ; kongzhi5:u6|price5[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns   ; choose5 ; kongzhi5:u6|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns   ; choose5 ; kongzhi5:u6|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.400 ns   ; buy4    ; kongzhi4:u5|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.400 ns   ; buy2    ; kongzhi2:u3|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.300 ns   ; choose4 ; kongzhi4:u5|quehuo4   ; clkk     ;
+; N/A                                     ; None                                                ; 1.300 ns   ; choose4 ; kongzhi4:u5|price4[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.300 ns   ; choose4 ; kongzhi4:u5|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns   ; buy3    ; kongzhi3:u4|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.100 ns   ; choose2 ; kongzhi2:u3|quehuo2   ; clkk     ;
+; N/A                                     ; None                                                ; 1.100 ns   ; choose2 ; kongzhi2:u3|price2[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.100 ns   ; choose2 ; kongzhi2:u3|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns   ; choose6 ; kongzhi6:u7|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns   ; choose6 ; kongzhi6:u7|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 0.900 ns   ; choose3 ; kongzhi3:u4|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns   ; choose1 ; kongzhi1:u2|quehuo1   ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns   ; choose1 ; kongzhi1:u2|price1[2] ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns   ; choose1 ; kongzhi1:u2|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 0.500 ns   ; choose4 ; kongzhi4:u5|count[2]  ; clkk     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;         ;                       ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+-----------------------+----------+
+
+
++-------------------------------------------------------------------------------------+
+; tco                                                                                 ;
++-------+--------------+------------+------------------------+-----------+------------+
+; Slack ; Required tco ; Actual tco ; From                   ; To        ; From Clock ;
++-------+--------------+------------+------------------------+-----------+------------+
+; N/A   ; None         ; 20.200 ns  ; shumashuzi:u8|daout[3] ; smg[6]    ; clk7       ;
+; N/A   ; None         ; 20.100 ns  ; shumashuzi:u8|daout[2] ; smg[6]    ; clk7       ;
+; N/A   ; None         ; 20.000 ns  ; shumashuzi:u8|daout[1] ; smg[6]    ; clk7       ;
+; N/A   ; None         ; 19.900 ns  ; shumashuzi:u8|sel[0]   ; teq[7]    ; clk7       ;
+; N/A   ; None         ; 19.900 ns  ; shumashuzi:u8|sel[1]   ; teq[7]    ; clk7       ;
+; N/A   ; None         ; 19.900 ns  ; shumashuzi:u8|sel[0]   ; teq[6]    ; clk7       ;
+; N/A   ; None         ; 19.800 ns  ; shumashuzi:u8|sel[1]   ; teq[6]    ; clk7       ;
+; N/A   ; None         ; 19.800 ns  ; shumashuzi:u8|sel[0]   ; teq[5]    ; clk7       ;
+; N/A   ; None         ; 19.800 ns  ; shumashuzi:u8|sel[0]   ; teq[4]    ; clk7       ;
+; N/A   ; None         ; 19.800 ns  ; shumashuzi:u8|sel[0]   ; teq[3]    ; clk7       ;
+; N/A   ; None         ; 19.700 ns  ; shumashuzi:u8|sel[1]   ; teq[5]    ; clk7       ;
+; N/A   ; None         ; 19.700 ns  ; shumashuzi:u8|sel[2]   ; teq[4]    ; clk7       ;
+; N/A   ; None         ; 19.700 ns  ; shumashuzi:u8|sel[1]   ; teq[3]    ; clk7       ;
+; N/A   ; None         ; 19.700 ns  ; shumashuzi:u8|daout[0] ; smg[6]    ; clk7       ;
+; N/A   ; None         ; 19.400 ns  ; shumashuzi:u8|sel[2]   ; teq[7]    ; clk7       ;
+; N/A   ; None         ; 19.400 ns  ; shumashuzi:u8|daout[3] ; smg[3]    ; clk7       ;
+; N/A   ; None         ; 19.400 ns  ; shumashuzi:u8|daout[3] ; smg[2]    ; clk7       ;
+; N/A   ; None         ; 19.300 ns  ; shumashuzi:u8|sel[2]   ; teq[6]    ; clk7       ;
+; N/A   ; None         ; 19.300 ns  ; shumashuzi:u8|daout[2] ; smg[3]    ; clk7       ;
+; N/A   ; None         ; 19.300 ns  ; shumashuzi:u8|daout[2] ; smg[2]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|sel[2]   ; teq[5]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|sel[1]   ; teq[4]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|sel[2]   ; teq[3]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|sel[2]   ; teq[2]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|sel[1]   ; teq[2]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|daout[1] ; smg[3]    ; clk7       ;
+; N/A   ; None         ; 19.200 ns  ; shumashuzi:u8|daout[1] ; smg[2]    ; clk7       ;
+; N/A   ; None         ; 18.800 ns  ; shumashuzi:u8|sel[0]   ; teq[2]    ; clk7       ;
+; N/A   ; None         ; 18.800 ns  ; shumashuzi:u8|daout[3] ; smg[5]    ; clk7       ;
+; N/A   ; None         ; 18.800 ns  ; shumashuzi:u8|daout[3] ; smg[4]    ; clk7       ;
+; N/A   ; None         ; 18.800 ns  ; shumashuzi:u8|daout[0] ; smg[3]    ; clk7       ;
+; N/A   ; None         ; 18.800 ns  ; shumashuzi:u8|daout[0] ; smg[2]    ; clk7       ;
+; N/A   ; None         ; 18.700 ns  ; shumashuzi:u8|daout[2] ; smg[5]    ; clk7       ;
+; N/A   ; None         ; 18.700 ns  ; shumashuzi:u8|daout[2] ; smg[4]    ; clk7       ;
+; N/A   ; None         ; 18.700 ns  ; shumashuzi:u8|daout[3] ; smg[1]    ; clk7       ;
+; N/A   ; None         ; 18.700 ns  ; shumashuzi:u8|daout[3] ; smg[0]    ; clk7       ;
+; N/A   ; None         ; 18.600 ns  ; shumashuzi:u8|daout[1] ; smg[5]    ; clk7       ;
+; N/A   ; None         ; 18.600 ns  ; shumashuzi:u8|daout[1] ; smg[4]    ; clk7       ;
+; N/A   ; None         ; 18.600 ns  ; shumashuzi:u8|daout[2] ; smg[1]    ; clk7       ;
+; N/A   ; None         ; 18.600 ns  ; shumashuzi:u8|daout[2] ; smg[0]    ; clk7       ;
+; N/A   ; None         ; 18.500 ns  ; shumashuzi:u8|daout[1] ; smg[1]    ; clk7       ;
+; N/A   ; None         ; 18.500 ns  ; shumashuzi:u8|daout[1] ; smg[0]    ; clk7       ;
+; N/A   ; None         ; 18.200 ns  ; shumashuzi:u8|daout[0] ; smg[5]    ; clk7       ;
+; N/A   ; None         ; 18.200 ns  ; shumashuzi:u8|daout[0] ; smg[4]    ; clk7       ;
+; N/A   ; None         ; 18.200 ns  ; shumashuzi:u8|daout[0] ; smg[1]    ; clk7       ;
+; N/A   ; None         ; 18.200 ns  ; shumashuzi:u8|daout[0] ; smg[0]    ; clk7       ;
+; N/A   ; None         ; 17.400 ns  ; shumashuzi:u8|sel[0]   ; teq[1]    ; clk7       ;
+; N/A   ; None         ; 16.900 ns  ; shumashuzi:u8|sel[0]   ; teq[0]    ; clk7       ;
+; N/A   ; None         ; 15.900 ns  ; shumashuzi:u8|sel[1]   ; teq[1]    ; clk7       ;
+; N/A   ; None         ; 15.900 ns  ; shumashuzi:u8|sel[2]   ; teq[0]    ; clk7       ;
+; N/A   ; None         ; 15.900 ns  ; shumashuzi:u8|sel[1]   ; teq[0]    ; clk7       ;
+; N/A   ; None         ; 15.800 ns  ; kongzhi5:u6|chuhuo5    ; chuhuo5   ; clkk       ;
+; N/A   ; None         ; 15.700 ns  ; kongzhi1:u2|price1[2]  ; price1[2] ; clkk       ;
+; N/A   ; None         ; 15.400 ns  ; shumashuzi:u8|sel[2]   ; teq[1]    ; clk7       ;
+; N/A   ; None         ; 15.300 ns  ; kongzhi3:u4|chuhuo3    ; chuhuo3   ; clkk       ;
+; N/A   ; None         ; 15.200 ns  ; kongzhi6:u7|chuhuo6    ; chuhuo6   ; clkk       ;
+; N/A   ; None         ; 15.200 ns  ; kongzhi4:u5|chuhuo4    ; chuhuo4   ; clkk       ;
+; N/A   ; None         ; 14.900 ns  ; kongzhi2:u3|price2[2]  ; price2[2] ; clkk       ;
+; N/A   ; None         ; 14.800 ns  ; kongzhi4:u5|quehuo4    ; quehuo4   ; clkk       ;
+; N/A   ; None         ; 14.800 ns  ; kongzhi1:u2|quehuo1    ; quehuo1   ; clkk       ;
+; N/A   ; None         ; 14.700 ns  ; kongzhi2:u3|quehuo2    ; quehuo2   ; clkk       ;
+; N/A   ; None         ; 14.700 ns  ; kongzhi1:u2|chuhuo1    ; chuhuo1   ; clkk       ;
+; N/A   ; None         ; 14.200 ns  ; kongzhi5:u6|price5[2]  ; price5[2] ; clkk       ;
+; N/A   ; None         ; 14.200 ns  ; kongzhi5:u6|quehuo5    ; quehuo5   ; clkk       ;
+; N/A   ; None         ; 14.100 ns  ; kongzhi3:u4|price3[2]  ; price3[2] ; clkk       ;
+; N/A   ; None         ; 14.100 ns  ; kongzhi3:u4|quehuo3    ; quehuo3   ; clkk       ;
+; N/A   ; None         ; 14.100 ns  ; kongzhi2:u3|chuhuo2    ; chuhuo2   ; clkk       ;
+; N/A   ; None         ; 13.800 ns  ; kongzhi4:u5|price4[2]  ; price4[2] ; clkk       ;
+; N/A   ; None         ; 13.300 ns  ; kongzhi6:u7|price6[2]  ; price6[2] ; clkk       ;
+; N/A   ; None         ; 13.300 ns  ; kongzhi6:u7|quehuo6    ; quehuo6   ; clkk       ;
++-------+--------------+------------+------------------------+-----------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+-----------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From    ; To                    ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+-----------------------+----------+
+; N/A                                     ; None                                                ; 2.700 ns  ; choose4 ; kongzhi4:u5|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 2.700 ns  ; choose3 ; kongzhi3:u4|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 2.200 ns  ; choose4 ; kongzhi4:u5|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.200 ns  ; choose4 ; kongzhi4:u5|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.200 ns  ; choose3 ; kongzhi3:u4|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.200 ns  ; choose3 ; kongzhi3:u4|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.100 ns  ; choose4 ; kongzhi4:u5|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns  ; choose1 ; kongzhi1:u2|quehuo1   ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns  ; choose1 ; kongzhi1:u2|price1[2] ; clkk     ;
+; N/A                                     ; None                                                ; 2.000 ns  ; choose1 ; kongzhi1:u2|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.800 ns  ; choose3 ; kongzhi3:u4|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns  ; choose6 ; kongzhi6:u7|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.700 ns  ; choose6 ; kongzhi6:u7|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.600 ns  ; choose2 ; kongzhi2:u3|quehuo2   ; clkk     ;
+; N/A                                     ; None                                                ; 1.600 ns  ; choose2 ; kongzhi2:u3|price2[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.600 ns  ; choose2 ; kongzhi2:u3|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.500 ns  ; buy3    ; kongzhi3:u4|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.400 ns  ; choose4 ; kongzhi4:u5|quehuo4   ; clkk     ;
+; N/A                                     ; None                                                ; 1.400 ns  ; choose4 ; kongzhi4:u5|price4[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.400 ns  ; choose4 ; kongzhi4:u5|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.300 ns  ; buy4    ; kongzhi4:u5|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.300 ns  ; buy2    ; kongzhi2:u3|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose6 ; kongzhi6:u7|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose6 ; kongzhi6:u7|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose5 ; kongzhi5:u6|quehuo5   ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose5 ; kongzhi5:u6|price5[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose5 ; kongzhi5:u6|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.200 ns  ; choose5 ; kongzhi5:u6|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns  ; choose6 ; kongzhi6:u7|quehuo6   ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns  ; choose6 ; kongzhi6:u7|price6[2] ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns  ; choose6 ; kongzhi6:u7|reset     ; clkk     ;
+; N/A                                     ; None                                                ; 1.000 ns  ; choose2 ; kongzhi2:u3|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 0.800 ns  ; choose4 ; kongzhi4:u5|j4444[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose5 ; kongzhi5:u6|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose5 ; kongzhi5:u6|j5555[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose5 ; kongzhi5:u6|j555[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose5 ; kongzhi5:u6|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose5 ; kongzhi5:u6|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose4 ; kongzhi4:u5|j444[1]   ; clkk     ;
+; N/A                                     ; None                                                ; 0.700 ns  ; choose1 ; kongzhi1:u2|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 0.600 ns  ; buy6    ; kongzhi6:u7|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 0.500 ns  ; choose2 ; kongzhi2:u3|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.500 ns  ; choose2 ; kongzhi2:u3|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.400 ns  ; buy5    ; kongzhi5:u6|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; 0.400 ns  ; choose1 ; kongzhi1:u2|j1111[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.300 ns  ; choose2 ; kongzhi2:u3|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.200 ns  ; choose1 ; kongzhi1:u2|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.200 ns  ; choose1 ; kongzhi1:u2|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.200 ns  ; choose1 ; kongzhi1:u2|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; 0.100 ns  ; choose1 ; kongzhi1:u2|j111[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -0.300 ns ; choose3 ; kongzhi3:u4|quehuo3   ; clkk     ;
+; N/A                                     ; None                                                ; -0.300 ns ; choose3 ; kongzhi3:u4|price3[2] ; clkk     ;
+; N/A                                     ; None                                                ; -0.300 ns ; choose3 ; kongzhi3:u4|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -0.400 ns ; choose2 ; kongzhi2:u3|j2222[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -0.500 ns ; choose3 ; kongzhi3:u4|j3333[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -0.500 ns ; choose2 ; kongzhi2:u3|j222[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -0.500 ns ; choose1 ; kongzhi1:u2|chuhuo1   ; clkk     ;
+; N/A                                     ; None                                                ; -0.700 ns ; choose3 ; kongzhi3:u4|j333[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -0.800 ns ; choose4 ; kongzhi4:u5|j444[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -0.900 ns ; choose2 ; kongzhi2:u3|chuhuo2   ; clkk     ;
+; N/A                                     ; None                                                ; -1.000 ns ; buy3    ; kongzhi3:u4|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.000 ns ; buy3    ; kongzhi3:u4|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.100 ns ; choose6 ; kongzhi6:u7|j6666[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.100 ns ; choose6 ; kongzhi6:u7|j666[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.100 ns ; choose4 ; kongzhi4:u5|chuhuo4   ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy4    ; kongzhi4:u5|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy4    ; kongzhi4:u5|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy4    ; kongzhi4:u5|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy2    ; kongzhi2:u3|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy2    ; kongzhi2:u3|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; buy1    ; kongzhi1:u2|jianyi    ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; choose4 ; kongzhi4:u5|j4444[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.200 ns ; choose4 ; kongzhi4:u5|j4444[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.300 ns ; choose5 ; kongzhi5:u6|chuhuo5   ; clkk     ;
+; N/A                                     ; None                                                ; -1.300 ns ; choose4 ; kongzhi4:u5|j4444[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.300 ns ; choose4 ; kongzhi4:u5|j444[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.300 ns ; choose4 ; kongzhi4:u5|j444[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.400 ns ; choose1 ; kongzhi1:u2|j111[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.400 ns ; choose1 ; kongzhi1:u2|j111[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.500 ns ; choose6 ; kongzhi6:u7|chuhuo6   ; clkk     ;
+; N/A                                     ; None                                                ; -1.600 ns ; choose1 ; kongzhi1:u2|j1111[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.600 ns ; choose1 ; kongzhi1:u2|j1111[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.800 ns ; buy3    ; kongzhi3:u4|j333[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -1.900 ns ; buy6    ; kongzhi6:u7|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.900 ns ; buy6    ; kongzhi6:u7|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.900 ns ; choose1 ; kongzhi1:u2|j1111[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -1.900 ns ; choose1 ; kongzhi1:u2|j111[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.000 ns ; buy5    ; kongzhi5:u6|price5[2] ; clkk     ;
+; N/A                                     ; None                                                ; -2.000 ns ; buy5    ; kongzhi5:u6|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -2.000 ns ; choose5 ; kongzhi5:u6|j555[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.000 ns ; choose5 ; kongzhi5:u6|j555[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.000 ns ; choose2 ; kongzhi2:u3|j222[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.100 ns ; buy5    ; kongzhi5:u6|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.100 ns ; buy5    ; kongzhi5:u6|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.200 ns ; buy4    ; kongzhi4:u5|j444[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.200 ns ; choose3 ; kongzhi3:u4|j333[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy6    ; kongzhi6:u7|quehuo6   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy6    ; kongzhi6:u7|price6[2] ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy6    ; kongzhi6:u7|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy5    ; kongzhi5:u6|chuhuo5   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy3    ; kongzhi3:u4|quehuo3   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy3    ; kongzhi3:u4|price3[2] ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy3    ; kongzhi3:u4|j333[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy3    ; kongzhi3:u4|j333[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; buy3    ; kongzhi3:u4|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -2.300 ns ; choose5 ; kongzhi5:u6|j555[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; buy2    ; kongzhi2:u3|quehuo2   ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; buy2    ; kongzhi2:u3|price2[2] ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; buy2    ; kongzhi2:u3|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; choose4 ; kongzhi4:u5|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; choose2 ; kongzhi2:u3|j2222[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.400 ns ; choose2 ; kongzhi2:u3|j2222[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; buy6    ; kongzhi6:u7|j666[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; buy4    ; kongzhi4:u5|quehuo4   ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; buy4    ; kongzhi4:u5|price4[2] ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; buy4    ; kongzhi4:u5|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose5 ; kongzhi5:u6|j5555[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose5 ; kongzhi5:u6|j5555[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose5 ; kongzhi5:u6|j5555[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose3 ; kongzhi3:u4|j3333[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose3 ; kongzhi3:u4|j3333[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose2 ; kongzhi2:u3|j2222[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose2 ; kongzhi2:u3|j222[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.500 ns ; choose2 ; kongzhi2:u3|j222[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.600 ns ; buy6    ; kongzhi6:u7|chuhuo6   ; clkk     ;
+; N/A                                     ; None                                                ; -2.600 ns ; buy3    ; kongzhi3:u4|chuhuo3   ; clkk     ;
+; N/A                                     ; None                                                ; -2.600 ns ; buy2    ; kongzhi2:u3|j222[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.600 ns ; choose6 ; kongzhi6:u7|j666[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; buy4    ; kongzhi4:u5|j4444[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; buy4    ; kongzhi4:u5|j444[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; buy4    ; kongzhi4:u5|j444[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; buy2    ; kongzhi2:u3|chuhuo2   ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; buy2    ; kongzhi2:u3|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; choose3 ; kongzhi3:u4|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; choose3 ; kongzhi3:u4|j333[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.700 ns ; choose3 ; kongzhi3:u4|j333[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -2.800 ns ; buy4    ; kongzhi4:u5|chuhuo4   ; clkk     ;
+; N/A                                     ; None                                                ; -2.800 ns ; buy3    ; kongzhi3:u4|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.800 ns ; choose6 ; kongzhi6:u7|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.800 ns ; choose3 ; kongzhi3:u4|chuhuo3   ; clkk     ;
+; N/A                                     ; None                                                ; -2.900 ns ; buy5    ; kongzhi5:u6|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -2.900 ns ; buy3    ; kongzhi3:u4|j3333[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.000 ns ; buy6    ; kongzhi6:u7|j666[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.000 ns ; buy6    ; kongzhi6:u7|j666[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.000 ns ; buy5    ; kongzhi5:u6|j5555[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.000 ns ; buy5    ; kongzhi5:u6|j555[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.100 ns ; buy2    ; kongzhi2:u3|j2222[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.100 ns ; buy2    ; kongzhi2:u3|j222[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.100 ns ; buy2    ; kongzhi2:u3|j222[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.100 ns ; choose6 ; kongzhi6:u7|j666[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.100 ns ; choose6 ; kongzhi6:u7|j666[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.200 ns ; buy5    ; kongzhi5:u6|quehuo5   ; clkk     ;
+; N/A                                     ; None                                                ; -3.200 ns ; buy4    ; kongzhi4:u5|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.200 ns ; buy1    ; kongzhi1:u2|quehuo1   ; clkk     ;
+; N/A                                     ; None                                                ; -3.200 ns ; buy1    ; kongzhi1:u2|price1[2] ; clkk     ;
+; N/A                                     ; None                                                ; -3.300 ns ; buy4    ; kongzhi4:u5|j4444[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.400 ns ; buy6    ; kongzhi6:u7|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.400 ns ; buy3    ; kongzhi3:u4|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.400 ns ; buy3    ; kongzhi3:u4|j3333[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy6    ; kongzhi6:u7|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy5    ; kongzhi5:u6|j5555[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy5    ; kongzhi5:u6|j555[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy5    ; kongzhi5:u6|j555[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy5    ; kongzhi5:u6|j555[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy2    ; kongzhi2:u3|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.500 ns ; buy1    ; kongzhi1:u2|chuhuo1   ; clkk     ;
+; N/A                                     ; None                                                ; -3.700 ns ; buy6    ; kongzhi6:u7|j6666[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.700 ns ; buy2    ; kongzhi2:u3|j2222[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.700 ns ; buy1    ; kongzhi1:u2|j111[2]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.700 ns ; buy1    ; kongzhi1:u2|reset     ; clkk     ;
+; N/A                                     ; None                                                ; -3.700 ns ; buy1    ; kongzhi1:u2|count[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.800 ns ; buy3    ; kongzhi3:u4|j333[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -3.800 ns ; choose5 ; kongzhi5:u6|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -3.800 ns ; choose3 ; kongzhi3:u4|j3333[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.000 ns ; buy5    ; kongzhi5:u6|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; buy6    ; kongzhi6:u7|j6666[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; buy4    ; kongzhi4:u5|j444[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; buy1    ; kongzhi1:u2|j1111[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; buy1    ; kongzhi1:u2|j111[0]   ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; buy1    ; kongzhi1:u2|j111[3]   ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; choose6 ; kongzhi6:u7|j6666[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; choose6 ; kongzhi6:u7|j6666[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.200 ns ; choose2 ; kongzhi2:u3|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.300 ns ; choose6 ; kongzhi6:u7|j6666[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.300 ns ; choose1 ; kongzhi1:u2|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -4.500 ns ; buy6    ; kongzhi6:u7|j666[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -4.600 ns ; buy2    ; kongzhi2:u3|j222[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -4.700 ns ; buy1    ; kongzhi1:u2|j1111[0]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.100 ns ; buy4    ; kongzhi4:u5|j4444[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.100 ns ; buy4    ; kongzhi4:u5|j4444[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.200 ns ; buy1    ; kongzhi1:u2|count[3]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.700 ns ; buy1    ; kongzhi1:u2|count[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.700 ns ; buy1    ; kongzhi1:u2|j111[1]   ; clkk     ;
+; N/A                                     ; None                                                ; -5.700 ns ; buy1    ; kongzhi1:u2|count[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.800 ns ; buy5    ; kongzhi5:u6|j5555[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -5.800 ns ; buy5    ; kongzhi5:u6|j5555[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -6.000 ns ; buy3    ; kongzhi3:u4|j3333[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -6.000 ns ; buy3    ; kongzhi3:u4|j3333[2]  ; clkk     ;
+; N/A                                     ; None                                                ; -6.600 ns ; buy2    ; kongzhi2:u3|j2222[1]  ; clkk     ;
+; N/A                                     ; None                                                ; -6.600 ns ; buy2    ; kongzhi2:u3|j2222[2]  ; clkk     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;         ;                       ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+-----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Fri Dec 24 17:43:24 2021
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off zidongshouhuoji -c zidongshouhuoji
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clkk" is an undefined clock
+    Info: Assuming node "clk7" is an undefined clock
+Info: Clock "clkk" has Internal fmax of 41.15 MHz between source register "kongzhi4:u5|j4444[3]" and destination register "kongzhi4:u5|j444[1]" (period= 24.3 ns)
+    Info: + Longest register to register delay is 22.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_A10; Fanout = 4; REG Node = 'kongzhi4:u5|j4444[3]'
+        Info: 2: + IC(1.900 ns) + CELL(1.900 ns) = 3.800 ns; Loc. = LC1_A9; Fanout = 8; COMB Node = 'kongzhi4:u5|Equal4~0'
+        Info: 3: + IC(1.900 ns) + CELL(1.400 ns) = 7.100 ns; Loc. = LC1_A8; Fanout = 1; COMB Node = 'kongzhi4:u5|process_0~7'
+        Info: 4: + IC(0.600 ns) + CELL(1.900 ns) = 9.600 ns; Loc. = LC6_A8; Fanout = 3; COMB Node = 'kongzhi4:u5|j444~20'
+        Info: 5: + IC(0.600 ns) + CELL(1.900 ns) = 12.100 ns; Loc. = LC2_A8; Fanout = 2; COMB Node = 'kongzhi4:u5|process_0~8'
+        Info: 6: + IC(0.600 ns) + CELL(1.900 ns) = 14.600 ns; Loc. = LC3_A8; Fanout = 4; COMB Node = 'kongzhi4:u5|process_0~9'
+        Info: 7: + IC(2.100 ns) + CELL(1.900 ns) = 18.600 ns; Loc. = LC2_A10; Fanout = 6; COMB Node = 'kongzhi4:u5|j44~4'
+        Info: 8: + IC(0.600 ns) + CELL(1.400 ns) = 20.600 ns; Loc. = LC8_A10; Fanout = 1; COMB Node = 'kongzhi4:u5|j4~7'
+        Info: 9: + IC(0.600 ns) + CELL(0.900 ns) = 22.100 ns; Loc. = LC5_A10; Fanout = 14; REG Node = 'kongzhi4:u5|j444[1]'
+        Info: Total cell delay = 13.200 ns ( 59.73 % )
+        Info: Total interconnect delay = 8.900 ns ( 40.27 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clkk" to destination register is 7.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_122; Fanout = 103; CLK Node = 'clkk'
+            Info: 2: + IC(4.500 ns) + CELL(0.000 ns) = 7.600 ns; Loc. = LC5_A10; Fanout = 14; REG Node = 'kongzhi4:u5|j444[1]'
+            Info: Total cell delay = 3.100 ns ( 40.79 % )
+            Info: Total interconnect delay = 4.500 ns ( 59.21 % )
+        Info: - Longest clock path from clock "clkk" to source register is 7.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_122; Fanout = 103; CLK Node = 'clkk'
+            Info: 2: + IC(4.500 ns) + CELL(0.000 ns) = 7.600 ns; Loc. = LC1_A10; Fanout = 4; REG Node = 'kongzhi4:u5|j4444[3]'
+            Info: Total cell delay = 3.100 ns ( 40.79 % )
+            Info: Total interconnect delay = 4.500 ns ( 59.21 % )
+    Info: + Micro clock to output delay of source is 0.900 ns
+    Info: + Micro setup delay of destination is 1.300 ns
+Info: Clock "clk7" has Internal fmax of 84.03 MHz between source register "shumashuzi:u8|temp[1]" and destination register "shumashuzi:u8|daout[2]" (period= 11.9 ns)
+    Info: + Longest register to register delay is 9.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC2_C8; Fanout = 16; REG Node = 'shumashuzi:u8|temp[1]'
+        Info: 2: + IC(2.100 ns) + CELL(1.900 ns) = 4.000 ns; Loc. = LC7_C9; Fanout = 1; COMB Node = 'shumashuzi:u8|Mux1~2'
+        Info: 3: + IC(0.600 ns) + CELL(1.900 ns) = 6.500 ns; Loc. = LC1_C9; Fanout = 1; COMB Node = 'shumashuzi:u8|Mux1~3'
+        Info: 4: + IC(1.800 ns) + CELL(1.400 ns) = 9.700 ns; Loc. = LC3_C8; Fanout = 7; REG Node = 'shumashuzi:u8|daout[2]'
+        Info: Total cell delay = 5.200 ns ( 53.61 % )
+        Info: Total interconnect delay = 4.500 ns ( 46.39 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk7" to destination register is 7.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_128; Fanout = 9; CLK Node = 'clk7'
+            Info: 2: + IC(4.500 ns) + CELL(0.000 ns) = 7.600 ns; Loc. = LC3_C8; Fanout = 7; REG Node = 'shumashuzi:u8|daout[2]'
+            Info: Total cell delay = 3.100 ns ( 40.79 % )
+            Info: Total interconnect delay = 4.500 ns ( 59.21 % )
+        Info: - Longest clock path from clock "clk7" to source register is 7.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_128; Fanout = 9; CLK Node = 'clk7'
+            Info: 2: + IC(4.500 ns) + CELL(0.000 ns) = 7.600 ns; Loc. = LC2_C8; Fanout = 16; REG Node = 'shumashuzi:u8|temp[1]'
+            Info: Total cell delay = 3.100 ns ( 40.79 % )
+            Info: Total interconnect delay = 4.500 ns ( 59.21 % )
+    Info: + Micro clock to output delay of source is 0.900 ns
+    Info: + Micro setup delay of destination is 1.300 ns
+Info: tsu for register "kongzhi1:u2|j1111[1]" (data pin = "buy1", clock pin = "clkk") is 10.400 ns
+    Info: + Longest pin to register delay is 16.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_33; Fanout = 9; PIN Node = 'buy1'
+        Info: 2: + IC(6.600 ns) + CELL(1.400 ns) = 11.100 ns; Loc. = LC5_C14; Fanout = 1; COMB Node = 'kongzhi1:u2|j1111~21'
+        Info: 3: + IC(1.800 ns) + CELL(1.900 ns) = 14.800 ns; Loc. = LC6_C13; Fanout = 2; COMB Node = 'kongzhi1:u2|j11~7'
+        Info: 4: + IC(0.600 ns) + CELL(1.400 ns) = 16.800 ns; Loc. = LC5_C13; Fanout = 6; REG Node = 'kongzhi1:u2|j1111[1]'
+        Info: Total cell delay = 7.800 ns ( 46.43 % )
+        Info: Total interconnect delay = 9.000 ns ( 53.57 % )
+    Info: + Micro setup delay of destination is 1.300 ns
+    Info: - Shortest clock path from clock "clkk" to destination register is 7.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_122; Fanout = 103; CLK Node = 'clkk'
+        Info: 2: + IC(4.600 ns) + CELL(0.000 ns) = 7.700 ns; Loc. = LC5_C13; Fanout = 6; REG Node = 'kongzhi1:u2|j1111[1]'
+        Info: Total cell delay = 3.100 ns ( 40.26 % )
+        Info: Total interconnect delay = 4.600 ns ( 59.74 % )
+Info: tco from clock "clk7" to destination pin "smg[6]" through register "shumashuzi:u8|daout[3]" is 20.200 ns
+    Info: + Longest clock path from clock "clk7" to source register is 7.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_128; Fanout = 9; CLK Node = 'clk7'
+        Info: 2: + IC(4.500 ns) + CELL(0.000 ns) = 7.600 ns; Loc. = LC5_C6; Fanout = 7; REG Node = 'shumashuzi:u8|daout[3]'
+        Info: Total cell delay = 3.100 ns ( 40.79 % )
+        Info: Total interconnect delay = 4.500 ns ( 59.21 % )
+    Info: + Micro clock to output delay of source is 0.900 ns
+    Info: + Longest register to pin delay is 11.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5_C6; Fanout = 7; REG Node = 'shumashuzi:u8|daout[3]'
+        Info: 2: + IC(3.700 ns) + CELL(1.900 ns) = 5.600 ns; Loc. = LC1_A20; Fanout = 1; COMB Node = 'shumaxianshi:u9|Mux0~0'
+        Info: 3: + IC(2.200 ns) + CELL(3.900 ns) = 11.700 ns; Loc. = PIN_143; Fanout = 0; PIN Node = 'smg[6]'
+        Info: Total cell delay = 5.800 ns ( 49.57 % )
+        Info: Total interconnect delay = 5.900 ns ( 50.43 % )
+Info: th for register "kongzhi4:u5|jianyi" (data pin = "choose4", clock pin = "clkk") is 2.700 ns
+    Info: + Longest clock path from clock "clkk" to destination register is 8.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_122; Fanout = 103; CLK Node = 'clkk'
+        Info: 2: + IC(5.800 ns) + CELL(0.000 ns) = 8.900 ns; Loc. = LC8_C1; Fanout = 5; REG Node = 'kongzhi4:u5|jianyi'
+        Info: Total cell delay = 3.100 ns ( 34.83 % )
+        Info: Total interconnect delay = 5.800 ns ( 65.17 % )
+    Info: + Micro hold delay of destination is 1.400 ns
+    Info: - Shortest pin to register delay is 7.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_65; Fanout = 16; PIN Node = 'choose4'
+        Info: 2: + IC(3.600 ns) + CELL(0.900 ns) = 7.600 ns; Loc. = LC8_C1; Fanout = 5; REG Node = 'kongzhi4:u5|jianyi'
+        Info: Total cell delay = 4.000 ns ( 52.63 % )
+        Info: Total interconnect delay = 3.600 ns ( 47.37 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 187 megabytes
+    Info: Processing ended: Fri Dec 24 17:43:24 2021
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

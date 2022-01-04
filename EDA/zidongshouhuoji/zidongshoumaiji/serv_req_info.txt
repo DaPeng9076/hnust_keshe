@@ -1,0 +1,51 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>MEM</sub_system>
+	<file>/quartus/ccl/mem/mem_segment.cpp</file>
+	<line>764</line>
+	<callstack>
+	0x058c240d: CCL_ERR + 0x240d (?err_report_internal_error@@YAXPEBD00H@Z + 0x2d)
+	0x058c2468: CCL_ERR + 0x2468 (?err_report_fatal_error@@YAXPEBD00H@Z + 0x8)
+	0x01d41cca: ccl_mem + 0x1cca (?clear_mem_check_memory@MEM_MANAGER@@SAXXZ + 0xda)
+	0x01d4a8f4: ccl_mem + 0xa8f4 (?locked_allocate@MEM_SEGMENT_INTERNAL@@AEAAPEAXPEADKKPEAVMEM_TRACKER_DATA@@@Z + 0x44)
+	0x01d49383: ccl_mem + 0x9383 (?allocate@MEM_SEGMENT_INTERNAL@@QEAAPEAX_KPEAVMEM_TRACKER_THUNK@@PEBD@Z + 0xd3)
+	0x01e15314: CCL_MSG + 0x5314 (?set_string@MSG_IDENTIFIER@@QEAAXAEBV?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@Z + 0x334)
+	0x01e18dec: CCL_MSG + 0x8dec (?clear_msg_list@MSG_REPORT_FILE@@AEAAXXZ + 0x12c)
+	0x01e1dfa4: CCL_MSG + 0xdfa4 (??1MSG_SUPPRESS_RULE@@QEAA@XZ + 0x11e4)
+	0x01e21180: CCL_MSG + 0x11180 (??6MSG_BASE@@QEAAXAEAV?$PDB_SEGMENT_TEMPLATE@VPDB_HDB_SEG_BASE@@@@@Z + 0x178)
+	0x01e323b0: CCL_MSG + 0x223b0 (??6MSG_POST@@QEAAXAEAV?$PDB_SEGMENT_TEMPLATE@VPDB_HDB_SEG_BASE@@@@@Z + 0x68)
+	0x042a4362: DB_PDB + 0x4362 (?finish_reading@PDB_VIRTUAL_OBJECT_INFO@@UEAAXAEAVPDB_SEGMENT_READER@@@Z + 0x52)
+	0x042a38de: DB_PDB + 0x38de (?finish_reading_all@PDB_SEGMENT_READER@@QEAAXXZ + 0x3e)
+	0x042af884: DB_PDB + 0xf884 (?pdb_read_ptr@@YA_NAEAVPDB_SEGMENT_READER@@P6AXAEAVPDB_SEGMENT@@AEAPEAX@Z2@Z + 0x54)
+	0x04bd0a68: synth_sgn + 0xa0a68 (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x94c28)
+	0x04bd4c8b: synth_sgn + 0xa4c8b (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x98e4b)
+	0x04be020f: synth_sgn + 0xb020f (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0xa43cf)
+	0x04bee996: synth_sgn + 0xbe996 (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0xb2b56)
+	0x04bc4bdf: synth_sgn + 0x94bdf (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x88d9f)
+	0x04bcadfc: synth_sgn + 0x9adfc (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x8efbc)
+	0x04bc7d44: synth_sgn + 0x97d44 (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x8bf04)
+	0x04bcae50: synth_sgn + 0x9ae50 (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x8f010)
+	0x04bcdce4: synth_sgn + 0x9dce4 (?sgn_qic_helper@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@@Z + 0x91ea4)
+	0x04b3b634: synth_sgn + 0xb634 (?sgn_full@@YA?AW4SGN_STATE_ENUM@@PEAVCMP_FACADE@@@Z + 0x84)
+	0x1400034f7: quartus_map + 0x34f7
+	0x14001f529: quartus_map + 0x1f529
+	0x01f9efdc: comp_qexe + 0xefdc (?qexe_get_tcl_sub_option@@YA_NPEBDPEAV?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@Z + 0x52c)
+	0x01fa316a: comp_qexe + 0x1316a (?qexe_process_cmdline_arguments@@YA_NPEAVQEXE_CMDLINE@@HPEAPEBD@Z + 0x4ca)
+	0x01fa31e8: comp_qexe + 0x131e8 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0x8)
+	0x1400194d2: quartus_map + 0x194d2
+	0x01e11a48: CCL_MSG + 0x1a48 (?msg_exe_fini@@YAXXZ + 0xf8)
+	0x01e119ec: CCL_MSG + 0x19ec (?msg_exe_fini@@YAXXZ + 0x9c)
+	0x01d49fc0: ccl_mem + 0x9fc0 (??_U@YAPEAX_KPEAVMEM_TRACKER_THUNK@@PEBD@Z + 0x130)
+	0x01e44014: CCL_MSG + 0x34014 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0x74)
+	0x140022231: quartus_map + 0x22231
+	0x7ffb1f4a7033: KERNEL32 + 0x17033 (BaseThreadInitThunk + 0x13)
+	0x7ffb206a2650: ntdll + 0x52650 (RtlUserThreadStart + 0x20)
+	0xffffffffffffffff:
+	</callstack>
+	<error>Attempting to allocate 1179801184 bytes</error>
+	<date>Sat Dec 25 22:19:37 2021</date>
+	<version>Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>Attempting to allocate 1179801184 bytes
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
